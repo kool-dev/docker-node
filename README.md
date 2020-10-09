@@ -35,10 +35,10 @@ Minimal [Node](https://nodejs.org/en/) Docker image. It's use is intended for [k
 
 ## Environment Variables
 
-Variable | Description | Default Value
+Variable | Default Value | Description
 --- | --- | ---
-**ASUSER** | Changes the user id that executes the commands | `-0`
-**UID** | Changes the user id that executes the commands **(ignored if ASUSER is provided)** | `-0`
+**ASUSER** | `0` | Changes the user id that executes the commands
+**UID** | `0` | Changes the user id that executes the commands **(ignored if ASUSER is provided)**
 
 ## Usage
 
