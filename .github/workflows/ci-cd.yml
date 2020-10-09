@@ -53,7 +53,6 @@ jobs:
 
       - name: Build (latest)
         if: github.ref == 'refs/heads/master' && github.repository == 'kool-dev/docker-node' && matrix.version == '14'
-        if: github.event_name == 'push' && github.ref == 'refs/heads/master' && matrix.version == '14'
         run: |
           docker tag kooldev/node:${{ matrix.version }} kooldev/node:latest
           docker tag kooldev/node:${{ matrix.version }}-qa kooldev/node:qa
