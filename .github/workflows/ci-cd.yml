@@ -54,12 +54,14 @@ jobs:
       - name: Build (latest)
         if: github.ref == 'refs/heads/master' && github.repository == 'kool-dev/docker-node' && matrix.version == '14'
         run: |
-          docker tag kooldev/node:${{ matrix.version }} kooldev/node:latest
-          docker tag kooldev/node:${{ matrix.version }}-qa kooldev/node:qa
-          docker tag kooldev/node:${{ matrix.version }}-adonis kooldev/node:adonis
-          docker tag kooldev/node:${{ matrix.version }}-adonis-qa kooldev/node:adonis-qa
-          docker tag kooldev/node:${{ matrix.version }}-nest kooldev/node:nest
-          docker tag kooldev/node:${{ matrix.version }}-nest-qa kooldev/node:nest-qa
+          if [ "${{ matrix.type }}" == "-qa" ]; then
+            docker tag kooldev/node:${{ matrix.version }}-qa kooldev/node:qa
+          else
+            docker tag kooldev/node:${{ matrix.version }} kooldev/node:latest
+          fi
+
+          docker tag kooldev/node:${{ matrix.version }}-adonis${{ matrix.type }} kooldev/node:adonis${{ matrix.type }}
+          docker tag kooldev/node:${{ matrix.version }}-nest${{ matrix.type }} kooldev/node:nest${{ matrix.type }}
 
       - name: Tests
         run: |
@@ -90,9 +92,11 @@ jobs:
       - name: Push to DockerHub (latest)
         if: github.ref == 'refs/heads/master' && github.repository == 'kool-dev/docker-node' && matrix.version == '14'
         run: |
-          docker push kooldev/node:latest
-          docker push kooldev/node:qa
-          docker push kooldev/node:adonis
-          docker push kooldev/node:adonis-qa
-          docker push kooldev/node:nest
-          docker push kooldev/node:nest-qa
+          if [ "${{ matrix.type }}" == "-qa" ]; then
+            docker push kooldev/node:qa
+          else
+            docker push kooldev/node:latest
+          fi
+
+          docker push kooldev/node:adonis${{ matrix.type }}
+          docker push kooldev/node:nest${{ matrix.type }}
