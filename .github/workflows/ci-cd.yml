@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        version: [10, 12, 14]
+        version: [10, 12, 14, 16]
         type: ['', '-qa']
 
     steps:
@@ -52,7 +52,7 @@ jobs:
             ${{ matrix.version }}-nest${{ matrix.type }}
 
       - name: Build (latest)
-        if: github.ref == 'refs/heads/master' && github.repository == 'kool-dev/docker-node' && matrix.version == '14'
+        if: github.ref == 'refs/heads/master' && github.repository == 'kool-dev/docker-node' && matrix.version == '16'
         run: |
           if [ "${{ matrix.type }}" == "-qa" ]; then
             docker tag kooldev/node:${{ matrix.version }}-qa kooldev/node:qa
@@ -90,7 +90,7 @@ jobs:
           docker push kooldev/node:${{ matrix.version }}-nest${{ matrix.type }}
 
       - name: Push to DockerHub (latest)
-        if: github.ref == 'refs/heads/master' && github.repository == 'kool-dev/docker-node' && matrix.version == '14'
+        if: github.ref == 'refs/heads/master' && github.repository == 'kool-dev/docker-node' && matrix.version == '16'
         run: |
           if [ "${{ matrix.type }}" == "-qa" ]; then
             docker push kooldev/node:qa

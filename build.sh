@@ -18,3 +18,10 @@ docker build -t kooldev/node:14-adonis 14-adonis
 docker build -t kooldev/node:14-adonis-qa 14-adonis-qa
 docker build -t kooldev/node:14-nest 14-nest
 docker build -t kooldev/node:14-nest-qa 14-nest-qa
+docker build --pull -t kooldev/node:16 16
+docker build -t kooldev/node:16-qa 16-qa
+docker build -t kooldev/node:16-adonis 16-adonis
+docker build -t kooldev/node:16-adonis-qa 16-adonis-qa
+docker build -t kooldev/node:16-nest 16-nest
+docker build -t kooldev/node:16-nest-qa 16-nest-qa
+
