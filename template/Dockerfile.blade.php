@@ -17,7 +17,7 @@ RUN adduser -D -u 1337 kool && deluser --remove-home node \
         libpng-dev \
         make \
         zlib-dev \
-        {{ $version === 8 ? 'python' : 'python2' }} \
+        python2 \
     && npm install -g pnpm \
     && rm -rf rm -rf /root/.npm/*
 
