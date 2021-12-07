@@ -4,7 +4,7 @@
         {
             "name": "10",
             "data": {
-                "from": "node:10-alpine",
+                "from": "node:10-alpine3.13",
                 "qa": false,
                 "version": "10"
             },
@@ -100,7 +100,7 @@
         {
             "name": "12",
             "data": {
-                "from": "node:12-alpine",
+                "from": "node:12-alpine3.13",
                 "qa": false,
                 "version": "12"
             },
@@ -196,7 +196,7 @@
         {
             "name": "14",
             "data": {
-                "from": "node:14-alpine",
+                "from": "node:14-alpine3.13",
                 "qa": false,
                 "version": "14"
             },
@@ -292,7 +292,7 @@
         {
             "name": "16",
             "data": {
-                "from": "node:16-alpine",
+                "from": "node:16-alpine3.13",
                 "qa": false,
                 "version": "16"
             },
