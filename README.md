@@ -33,6 +33,15 @@ Minimal [Node](https://nodejs.org/en/) Docker image. It's use is intended for [k
 - [14-nest](https://github.com/kool-dev/docker-node/blob/master/14-nest/Dockerfile)
 - [14-nest-qa](https://github.com/kool-dev/docker-node/blob/master/14-nest-qa/Dockerfile)
 
+### 16
+
+- [16](https://github.com/kool-dev/docker-node/blob/master/16/Dockerfile)
+- [16-qa](https://github.com/kool-dev/docker-node/blob/master/16-qa/Dockerfile)
+- [16-adonis](https://github.com/kool-dev/docker-node/blob/master/16-adonis/Dockerfile)
+- [16-adonis-qa](https://github.com/kool-dev/docker-node/blob/master/16-adonis-qa/Dockerfile)
+- [16-nest](https://github.com/kool-dev/docker-node/blob/master/16-nest/Dockerfile)
+- [16-nest-qa](https://github.com/kool-dev/docker-node/blob/master/16-nest-qa/Dockerfile)
+
 ## Environment Variables
 
 Variable | Default Value | Description
