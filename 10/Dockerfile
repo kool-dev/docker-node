@@ -1,4 +1,4 @@
-FROM node:10-alpine3.13
+FROM node:10-alpine
 
 ENV ASUSER= \
     UID=0 \

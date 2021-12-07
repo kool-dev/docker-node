@@ -4,7 +4,7 @@
         {
             "name": "10",
             "data": {
-                "from": "node:10-alpine3.13",
+                "from": "node:10-alpine",
                 "qa": false,
                 "version": "10"
             },
