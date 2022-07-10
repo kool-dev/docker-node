@@ -1,4 +1,4 @@
-FROM node:16-alpine3.13
+FROM node:16-alpine
 
 ENV ASUSER= \
     UID=0 \
@@ -17,9 +17,9 @@ RUN adduser -D -u 1337 kool && deluser --remove-home node \
         libpng-dev \
         make \
         zlib-dev \
-        python2 \
     && npm install -g pnpm \
     && rm -rf rm -rf /root/.npm/*
+
 
 COPY root-npmrc /root/.npmrc
 COPY --chown=kool:kool kool-npmrc /home/kool/.npmrc

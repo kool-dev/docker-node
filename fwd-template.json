@@ -2,298 +2,10 @@
     "output": ".",
     "builds": [
         {
-            "name": "10",
-            "data": {
-                "from": "node:10-alpine",
-                "qa": false,
-                "version": "10"
-            },
-            "files": [
-                {
-                    "name": "Dockerfile",
-                    "path": "template/Dockerfile"
-                },
-                {
-                    "name": "entrypoint",
-                    "path": "template/entrypoint"
-                },
-                {
-                    "name": "kool-npmrc",
-                    "path": "template/kool-npmrc"
-                },
-                {
-                    "name": "root-npmrc",
-                    "path": "template/root-npmrc"
-                }
-            ]
-        },
-        {
-            "name": "10-qa",
-            "data": {
-                "from": "kooldev/node:10",
-                "qa": true,
-                "version": "10-qa"
-            },
-            "files": [
-                {
-                    "name": "Dockerfile",
-                    "path": "template/Dockerfile-qa"
-                }
-            ]
-        },
-        {
-            "name": "10-adonis",
-            "data": {
-                "from": "kooldev/node:10",
-                "qa": false,
-                "version": "10"
-            },
-            "files": [
-                {
-                    "name": "Dockerfile",
-                    "path": "template/Dockerfile-adonis"
-                }
-            ]
-        },
-        {
-            "name": "10-adonis-qa",
-            "data": {
-                "from": "kooldev/node:10-adonis",
-                "qa": true,
-                "version": "10"
-            },
-            "files": [
-                {
-                    "name": "Dockerfile",
-                    "path": "template/Dockerfile-qa"
-                }
-            ]
-        },
-        {
-            "name": "10-nest",
-            "data": {
-                "from": "kooldev/node:10",
-                "qa": false,
-                "version": "10"
-            },
-            "files": [
-                {
-                    "name": "Dockerfile",
-                    "path": "template/Dockerfile-nest"
-                }
-            ]
-        },
-        {
-            "name": "10-nest-qa",
-            "data": {
-                "from": "kooldev/node:10-nest",
-                "qa": true,
-                "version": "10"
-            },
-            "files": [
-                {
-                    "name": "Dockerfile",
-                    "path": "template/Dockerfile-qa"
-                }
-            ]
-        },
-        {
-            "name": "12",
-            "data": {
-                "from": "node:12-alpine3.13",
-                "qa": false,
-                "version": "12"
-            },
-            "files": [
-                {
-                    "name": "Dockerfile",
-                    "path": "template/Dockerfile"
-                },
-                {
-                    "name": "entrypoint",
-                    "path": "template/entrypoint"
-                },
-                {
-                    "name": "kool-npmrc",
-                    "path": "template/kool-npmrc"
-                },
-                {
-                    "name": "root-npmrc",
-                    "path": "template/root-npmrc"
-                }
-            ]
-        },
-        {
-            "name": "12-qa",
-            "data": {
-                "from": "kooldev/node:12",
-                "qa": true,
-                "version": "12-qa"
-            },
-            "files": [
-                {
-                    "name": "Dockerfile",
-                    "path": "template/Dockerfile-qa"
-                }
-            ]
-        },
-        {
-            "name": "12-adonis",
-            "data": {
-                "from": "kooldev/node:12",
-                "qa": false,
-                "version": "12"
-            },
-            "files": [
-                {
-                    "name": "Dockerfile",
-                    "path": "template/Dockerfile-adonis"
-                }
-            ]
-        },
-        {
-            "name": "12-adonis-qa",
-            "data": {
-                "from": "kooldev/node:12-adonis",
-                "qa": true,
-                "version": "12"
-            },
-            "files": [
-                {
-                    "name": "Dockerfile",
-                    "path": "template/Dockerfile-qa"
-                }
-            ]
-        },
-        {
-            "name": "12-nest",
-            "data": {
-                "from": "kooldev/node:12",
-                "qa": false,
-                "version": "12"
-            },
-            "files": [
-                {
-                    "name": "Dockerfile",
-                    "path": "template/Dockerfile-nest"
-                }
-            ]
-        },
-        {
-            "name": "12-nest-qa",
-            "data": {
-                "from": "kooldev/node:12-nest",
-                "qa": true,
-                "version": "12"
-            },
-            "files": [
-                {
-                    "name": "Dockerfile",
-                    "path": "template/Dockerfile-qa"
-                }
-            ]
-        },
-        {
-            "name": "14",
-            "data": {
-                "from": "node:14-alpine3.13",
-                "qa": false,
-                "version": "14"
-            },
-            "files": [
-                {
-                    "name": "Dockerfile",
-                    "path": "template/Dockerfile"
-                },
-                {
-                    "name": "entrypoint",
-                    "path": "template/entrypoint"
-                },
-                {
-                    "name": "kool-npmrc",
-                    "path": "template/kool-npmrc"
-                },
-                {
-                    "name": "root-npmrc",
-                    "path": "template/root-npmrc"
-                }
-            ]
-        },
-        {
-            "name": "14-qa",
-            "data": {
-                "from": "kooldev/node:14",
-                "qa": true,
-                "version": "14-qa"
-            },
-            "files": [
-                {
-                    "name": "Dockerfile",
-                    "path": "template/Dockerfile-qa"
-                }
-            ]
-        },
-        {
-            "name": "14-adonis",
-            "data": {
-                "from": "kooldev/node:14",
-                "qa": false,
-                "version": "14"
-            },
-            "files": [
-                {
-                    "name": "Dockerfile",
-                    "path": "template/Dockerfile-adonis"
-                }
-            ]
-        },
-        {
-            "name": "14-adonis-qa",
-            "data": {
-                "from": "kooldev/node:14-adonis",
-                "qa": true,
-                "version": "14"
-            },
-            "files": [
-                {
-                    "name": "Dockerfile",
-                    "path": "template/Dockerfile-qa"
-                }
-            ]
-        },
-        {
-            "name": "14-nest",
-            "data": {
-                "from": "kooldev/node:14",
-                "qa": false,
-                "version": "14"
-            },
-            "files": [
-                {
-                    "name": "Dockerfile",
-                    "path": "template/Dockerfile-nest"
-                }
-            ]
-        },
-        {
-            "name": "14-nest-qa",
-            "data": {
-                "from": "kooldev/node:14-nest",
-                "qa": true,
-                "version": "14"
-            },
-            "files": [
-                {
-                    "name": "Dockerfile",
-                    "path": "template/Dockerfile-qa"
-                }
-            ]
-        },
-        {
             "name": "16",
             "data": {
-                "from": "node:16-alpine3.13",
-                "qa": false,
+                "from": "node:16-alpine",
+                "full": false,
                 "version": "16"
             },
             "files": [
@@ -316,72 +28,28 @@
             ]
         },
         {
-            "name": "16-qa",
+            "name": "16-full",
             "data": {
-                "from": "kooldev/node:16",
-                "qa": true,
-                "version": "16-qa"
-            },
-            "files": [
-                {
-                    "name": "Dockerfile",
-                    "path": "template/Dockerfile-qa"
-                }
-            ]
-        },
-        {
-            "name": "16-adonis",
-            "data": {
-                "from": "kooldev/node:16",
-                "qa": false,
+                "from": "node:16-alpine",
+                "full": true,
                 "version": "16"
             },
             "files": [
                 {
                     "name": "Dockerfile",
-                    "path": "template/Dockerfile-adonis"
-                }
-            ]
-        },
-        {
-            "name": "16-adonis-qa",
-            "data": {
-                "from": "kooldev/node:16-adonis",
-                "qa": true,
-                "version": "16"
-            },
-            "files": [
+                    "path": "template/Dockerfile"
+                },
                 {
-                    "name": "Dockerfile",
-                    "path": "template/Dockerfile-qa"
-                }
-            ]
-        },
-        {
-            "name": "16-nest",
-            "data": {
-                "from": "kooldev/node:16",
-                "qa": false,
-                "version": "16"
-            },
-            "files": [
+                    "name": "entrypoint",
+                    "path": "template/entrypoint"
+                },
                 {
-                    "name": "Dockerfile",
-                    "path": "template/Dockerfile-nest"
-                }
-            ]
-        },
-        {
-            "name": "16-nest-qa",
-            "data": {
-                "from": "kooldev/node:16-nest",
-                "qa": true,
-                "version": "16"
-            },
-            "files": [
+                    "name": "kool-npmrc",
+                    "path": "template/kool-npmrc"
+                },
                 {
-                    "name": "Dockerfile",
-                    "path": "template/Dockerfile-qa"
+                    "name": "root-npmrc",
+                    "path": "template/root-npmrc"
                 }
             ]
         }

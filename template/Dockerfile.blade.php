@@ -17,9 +17,17 @@ RUN adduser -D -u 1337 kool && deluser --remove-home node \
         libpng-dev \
         make \
         zlib-dev \
-        python2 \
     && npm install -g pnpm \
     && rm -rf rm -rf /root/.npm/*
+
+@if($full)
+RUN npm install -g buddy.js jshint jsinspect eslint \
+    # for NestJS
+    @nestjs/cli \
+    # for AdonisJS
+    @adonisjs/cli \
+    && rm -rf rm -rf /root/.npm/*
+@endif
 
 COPY root-npmrc /root/.npmrc
 COPY --chown=kool:kool kool-npmrc /home/kool/.npmrc
