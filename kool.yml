@@ -5,4 +5,5 @@ scripts:
     - kool run template
     # node 16
     - docker build --pull -t kooldev/node:16 16
-    - docker build -t kooldev/node:16-full 16-full
+    # node 18
+    - docker build --pull -t kooldev/node:18 18

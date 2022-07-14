@@ -1,4 +1,4 @@
-FROM node:16-alpine
+FROM node:18-alpine
 
 ENV ASUSER= \
     UID=0 \
@@ -18,13 +18,6 @@ RUN adduser -D -u 1337 kool && deluser --remove-home node \
         make \
         zlib-dev \
     && npm install -g pnpm \
-    && rm -rf rm -rf /root/.npm/*
-
-RUN npm install -g buddy.js jshint jsinspect eslint \
-    # for NestJS
-    @nestjs/cli \
-    # for AdonisJS
-    @adonisjs/cli \
     && rm -rf rm -rf /root/.npm/*
 
 COPY root-npmrc /root/.npmrc

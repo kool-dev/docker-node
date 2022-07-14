@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        version: [10, 12, 14, 16]
+        version: [16, 18]
 
     steps:
       - name: Checkout code
@@ -31,64 +31,16 @@ jobs:
             --output type=docker \
             --tag kooldev/node:${{ matrix.version }} \
             ${{ matrix.version }}
-          docker buildx build \
-            --cache-from type=local,src=/tmp/.buildx-cache/${{ matrix.version }}-qa \
-            --cache-to type=local,dest=/tmp/.buildx-cache/${{ matrix.version }}-qa \
-            --output type=docker \
-            --tag kooldev/node:${{ matrix.version }}-qa \
-            ${{ matrix.version }}-qa
-
-      - name: Build (adonis)
-        run: |
-          docker buildx build \
-            --cache-from type=local,src=/tmp/.buildx-cache/${{ matrix.version }}-adonis \
-            --cache-to type=local,dest=/tmp/.buildx-cache/${{ matrix.version }}-adonis \
-            --output type=docker \
-            --tag kooldev/node:${{ matrix.version }}-adonis \
-            ${{ matrix.version }}-adonis
-          docker buildx build \
-            --cache-from type=local,src=/tmp/.buildx-cache/${{ matrix.version }}-adonis-qa \
-            --cache-to type=local,dest=/tmp/.buildx-cache/${{ matrix.version }}-adonis-qa \
-            --output type=docker \
-            --tag kooldev/node:${{ matrix.version }}-adonis-qa \
-            ${{ matrix.version }}-adonis-qa
-
-      - name: Build (nest)
-        run: |
-          docker buildx build \
-            --cache-from type=local,src=/tmp/.buildx-cache/${{ matrix.version }}-nest \
-            --cache-to type=local,dest=/tmp/.buildx-cache/${{ matrix.version }}-nest \
-            --output type=docker \
-            --tag kooldev/node:${{ matrix.version }}-nest \
-            ${{ matrix.version }}-nest
-          docker buildx build \
-            --cache-from type=local,src=/tmp/.buildx-cache/${{ matrix.version }}-nest-qa \
-            --cache-to type=local,dest=/tmp/.buildx-cache/${{ matrix.version }}-nest-qa \
-            --output type=docker \
-            --tag kooldev/node:${{ matrix.version }}-nest-qa \
-            ${{ matrix.version }}-nest-qa
-
-      - name: Build (latest)
-        if: github.ref == 'refs/heads/master' && github.repository == 'kool-dev/docker-node' && matrix.version == '16'
-        run: |
-          docker tag kooldev/node:${{ matrix.version }}-qa kooldev/node:qa
-          docker tag kooldev/node:${{ matrix.version }} kooldev/node:latest
-          docker tag kooldev/node:${{ matrix.version }}-adonis kooldev/node:adonis
-          docker tag kooldev/node:${{ matrix.version }}-adonis-qa kooldev/node:adonis-qa
-          docker tag kooldev/node:${{ matrix.version }}-nest kooldev/node:nest
-          docker tag kooldev/node:${{ matrix.version }}-nest-qa kooldev/node:nest-qa
 
       - name: Tests
         run: |
-          for suffix in '' -adonis -nest; do
-            docker run kooldev/node:${{ matrix.version }}$suffix node -v;
-            docker run kooldev/node:${{ matrix.version }}$suffix npm -v;
-            docker run kooldev/node:${{ matrix.version }}$suffix yarn -v;
+          docker run kooldev/node:${{ matrix.version }} node -v;
+          docker run kooldev/node:${{ matrix.version }} npm -v;
+          docker run kooldev/node:${{ matrix.version }} yarn -v;
 
-            docker run -e ASUSER=1000 kooldev/node:${{ matrix.version }}$suffix node -v;
-            docker run -e ASUSER=1000 kooldev/node:${{ matrix.version }}$suffix npm -v;
-            docker run -e ASUSER=1000 kooldev/node:${{ matrix.version }}$suffix yarn -v;
-          done
+          docker run -e ASUSER=1000 kooldev/node:${{ matrix.version }} node -v;
+          docker run -e ASUSER=1000 kooldev/node:${{ matrix.version }} npm -v;
+          docker run -e ASUSER=1000 kooldev/node:${{ matrix.version }} yarn -v;
 
       - name: Login to DockerHub
         uses: docker/login-action@v1.12.0
@@ -101,18 +53,3 @@ jobs:
         if: github.ref == 'refs/heads/master' && github.repository == 'kool-dev/docker-node'
         run: |
           docker push kooldev/node:${{ matrix.version }}
-          docker push kooldev/node:${{ matrix.version }}-qa
-          docker push kooldev/node:${{ matrix.version }}-adonis
-          docker push kooldev/node:${{ matrix.version }}-adonis-qa
-          docker push kooldev/node:${{ matrix.version }}-nest
-          docker push kooldev/node:${{ matrix.version }}-nest-qa
-
-      - name: Push to DockerHub (latest)
-        if: github.ref == 'refs/heads/master' && github.repository == 'kool-dev/docker-node' && matrix.version == '16'
-        run: |
-          docker push kooldev/node:qa
-          docker push kooldev/node:latest
-          docker push kooldev/node:adonis
-          docker push kooldev/node:adonis-qa
-          docker push kooldev/node:nest
-          docker push kooldev/node:nest-qa

@@ -20,7 +20,6 @@ RUN adduser -D -u 1337 kool && deluser --remove-home node \
     && npm install -g pnpm \
     && rm -rf rm -rf /root/.npm/*
 
-
 COPY root-npmrc /root/.npmrc
 COPY --chown=kool:kool kool-npmrc /home/kool/.npmrc
 COPY entrypoint /entrypoint
