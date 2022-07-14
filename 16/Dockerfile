@@ -26,4 +26,6 @@ COPY entrypoint /entrypoint
 
 RUN chmod +x /entrypoint
 
+RUN mkdir -p /usr/local/lib/node_modules && chown -R kool:kool /usr/local/lib/node_modules
+
 ENTRYPOINT [ "/entrypoint" ]
