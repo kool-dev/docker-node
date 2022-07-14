@@ -6,41 +6,19 @@ Minimal [Node](https://nodejs.org/en/) Docker image. It's use is intended for [k
 
 ## Available Tags
 
-### 10
-
-- [10](https://github.com/kool-dev/docker-node/blob/master/10/Dockerfile)
-- [10-qa](https://github.com/kool-dev/docker-node/blob/master/10-qa/Dockerfile)
-- [10-adonis](https://github.com/kool-dev/docker-node/blob/master/10-adonis/Dockerfile)
-- [10-adonis-qa](https://github.com/kool-dev/docker-node/blob/master/10-adonis-qa/Dockerfile)
-- [10-nest](https://github.com/kool-dev/docker-node/blob/master/10-nest/Dockerfile)
-- [10-nest-qa](https://github.com/kool-dev/docker-node/blob/master/10-nest-qa/Dockerfile)
-
-### 12
-
-- [12](https://github.com/kool-dev/docker-node/blob/master/12/Dockerfile)
-- [12-qa](https://github.com/kool-dev/docker-node/blob/master/12-qa/Dockerfile)
-- [12-adonis](https://github.com/kool-dev/docker-node/blob/master/12-adonis/Dockerfile)
-- [12-adonis-qa](https://github.com/kool-dev/docker-node/blob/master/12-adonis-qa/Dockerfile)
-- [12-nest](https://github.com/kool-dev/docker-node/blob/master/12-nest/Dockerfile)
-- [12-nest-qa](https://github.com/kool-dev/docker-node/blob/master/12-nest-qa/Dockerfile)
-
-### 14
-
-- [14](https://github.com/kool-dev/docker-node/blob/master/14/Dockerfile)
-- [14-qa](https://github.com/kool-dev/docker-node/blob/master/14-qa/Dockerfile)
-- [14-adonis](https://github.com/kool-dev/docker-node/blob/master/14-adonis/Dockerfile)
-- [14-adonis-qa](https://github.com/kool-dev/docker-node/blob/master/14-adonis-qa/Dockerfile)
-- [14-nest](https://github.com/kool-dev/docker-node/blob/master/14-nest/Dockerfile)
-- [14-nest-qa](https://github.com/kool-dev/docker-node/blob/master/14-nest-qa/Dockerfile)
-
 ### 16
 
 - [16](https://github.com/kool-dev/docker-node/blob/master/16/Dockerfile)
-- [16-qa](https://github.com/kool-dev/docker-node/blob/master/16-qa/Dockerfile)
-- [16-adonis](https://github.com/kool-dev/docker-node/blob/master/16-adonis/Dockerfile)
-- [16-adonis-qa](https://github.com/kool-dev/docker-node/blob/master/16-adonis-qa/Dockerfile)
-- [16-nest](https://github.com/kool-dev/docker-node/blob/master/16-nest/Dockerfile)
-- [16-nest-qa](https://github.com/kool-dev/docker-node/blob/master/16-nest-qa/Dockerfile)
+
+### 18
+
+- [18](https://github.com/kool-dev/docker-node/blob/master/18/Dockerfile)
+
+### Legacy / discontinued tags
+
+- [10](https://github.com/kool-dev/docker-node/blob/master/10/Dockerfile), [10-qa](https://github.com/kool-dev/docker-node/blob/master/10-qa/Dockerfile), [10-adonis](https://github.com/kool-dev/docker-node/blob/master/10-adonis/Dockerfile), [10-adonis-qa](https://github.com/kool-dev/docker-node/blob/master/10-adonis-qa/Dockerfile), [10-nest](https://github.com/kool-dev/docker-node/blob/master/10-nest/Dockerfile), [10-nest-qa](https://github.com/kool-dev/docker-node/blob/master/10-nest-qa/Dockerfile)
+- [12](https://github.com/kool-dev/docker-node/blob/master/12/Dockerfile), [12-qa](https://github.com/kool-dev/docker-node/blob/master/12-qa/Dockerfile), [12-adonis](https://github.com/kool-dev/docker-node/blob/master/12-adonis/Dockerfile), [12-adonis-qa](https://github.com/kool-dev/docker-node/blob/master/12-adonis-qa/Dockerfile), [12-nest](https://github.com/kool-dev/docker-node/blob/master/12-nest/Dockerfile), [12-nest-qa](https://github.com/kool-dev/docker-node/blob/master/12-nest-qa/Dockerfile)
+- [14](https://github.com/kool-dev/docker-node/blob/master/14/Dockerfile), [14-qa](https://github.com/kool-dev/docker-node/blob/master/14-qa/Dockerfile), [14-adonis](https://github.com/kool-dev/docker-node/blob/master/14-adonis/Dockerfile), [14-adonis-qa](https://github.com/kool-dev/docker-node/blob/master/14-adonis-qa/Dockerfile), [14-nest](https://github.com/kool-dev/docker-node/blob/master/14-nest/Dockerfile), [14-nest-qa](https://github.com/kool-dev/docker-node/blob/master/14-nest-qa/Dockerfile)
 
 ## Environment Variables
 
@@ -54,13 +32,13 @@ Variable | Default Value | Description
 With `docker run`:
 
 ```sh
-docker run -it --rm kooldev/node:14 node -v
+docker run -it --rm kooldev/node:16 node -v
 ```
 
 With environment variables:
 
 ```sh
-docker run -it --rm -e ASUSER=500 kooldev/node:14 node -v
+docker run -it --rm -e ASUSER=500 kooldev/node:16 node -v
 ```
 
 With `docker-compose.yml`:
@@ -74,13 +52,15 @@ app:
 
 ## Contributing
 
-### Dependencies
+### Updating images and building locally
 
-- [fwd](https://github.com/fireworkweb/fwd#fireworkwebfwd)
+> You must have [`kool`](https://github.com/kool-dev/kool) installed.
+
+This repo leverages a simple templating tool based on Laravel Blade to generate the actual building contexts for each image flavour.
 
 You should change `fwd-template.json` and `template` folder.
 
-After your changes, just run `fwd template` to compile the template and generate all version folder/files.
+After your changes, just run `kool run template` to compile the template and generate all version folder/files.
 
 ## License
 
