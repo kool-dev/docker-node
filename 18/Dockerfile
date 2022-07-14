@@ -26,6 +26,8 @@ COPY entrypoint /entrypoint
 
 RUN chmod +x /entrypoint
 
-RUN mkdir -p /usr/local/lib/node_modules && chown -R kool:kool /usr/local/lib/node_modules
+RUN mkdir -p /usr/local/lib/node_modules && chmod -R 777 /usr/local/lib/node_modules
+
+RUN npm i --location=global npm@latest
 
 ENTRYPOINT [ "/entrypoint" ]
