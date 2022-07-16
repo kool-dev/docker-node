@@ -17,7 +17,6 @@ RUN adduser -D -u 1337 kool && deluser --remove-home node \
         libpng-dev \
         make \
         zlib-dev \
-        python2 \
     && npm install -g pnpm \
     && rm -rf rm -rf /root/.npm/*
 
@@ -26,5 +25,9 @@ COPY --chown=kool:kool kool-npmrc /home/kool/.npmrc
 COPY entrypoint /entrypoint
 
 RUN chmod +x /entrypoint
+
+RUN mkdir -p /usr/local/lib/node_modules && chmod -R 777 /usr/local/lib/node_modules
+
+RUN npm i --location=global npm@latest
 
 ENTRYPOINT [ "/entrypoint" ]
