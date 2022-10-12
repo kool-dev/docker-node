@@ -47,7 +47,7 @@ jobs:
           docker run -e ASUSER=1000 kooldev/node:${{ matrix.version }} yarn -v;
 
       - name: Login to DockerHub
-        uses: docker/login-action@v2.0.0
+        uses: docker/login-action@v2.1.0
         if: github.ref == 'refs/heads/master' && github.repository == 'kool-dev/docker-node'
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
