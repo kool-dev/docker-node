@@ -4,14 +4,15 @@ on:
   push:
   workflow_dispatch:
   schedule:
-    - cron: '15 2 * * *'
+    - cron: '0 0 * * 0'
 
 jobs:
   build:
-    runs-on: ubuntu-latest
     strategy:
       matrix:
         version: [16, 18]
+        runs-on: [ubuntu-latest, buildjet-4vcpu-ubuntu-2204-arm]
+    runs-on: ${{ matrix.runs-on }}
 
     steps:
       - name: Checkout code
