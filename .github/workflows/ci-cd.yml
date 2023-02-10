@@ -34,18 +34,18 @@ jobs:
             --cache-from type=local,src=/tmp/.buildx-cache/${{ matrix.version }} \
             --cache-to type=local,dest=/tmp/.buildx-cache/${{ matrix.version }} \
             --output type=docker \
-            --tag kooldev/node:${{ matrix.version }}-${arch} \
+            --tag kooldev/node:${{ matrix.version }}-$(arch) \
             ${{ matrix.version }}
 
       - name: Tests
         run: |
-          docker run kooldev/node:${{ matrix.version }}-${arch} node -v;
-          docker run kooldev/node:${{ matrix.version }}-${arch} npm -v;
-          docker run kooldev/node:${{ matrix.version }}-${arch} yarn -v;
+          docker run kooldev/node:${{ matrix.version }}-$(arch) node -v;
+          docker run kooldev/node:${{ matrix.version }}-$(arch) npm -v;
+          docker run kooldev/node:${{ matrix.version }}-$(arch) yarn -v;
 
-          docker run -e ASUSER=1000 kooldev/node:${{ matrix.version }}-${arch} node -v;
-          docker run -e ASUSER=1000 kooldev/node:${{ matrix.version }}-${arch} npm -v;
-          docker run -e ASUSER=1000 kooldev/node:${{ matrix.version }}-${arch} yarn -v;
+          docker run -e ASUSER=1000 kooldev/node:${{ matrix.version }}-$(arch) node -v;
+          docker run -e ASUSER=1000 kooldev/node:${{ matrix.version }}-$(arch) npm -v;
+          docker run -e ASUSER=1000 kooldev/node:${{ matrix.version }}-$(arch) yarn -v;
 
       - name: Login to DockerHub
         uses: docker/login-action@v2
@@ -57,7 +57,7 @@ jobs:
       - name: Push to DockerHub
         if: github.ref == 'refs/heads/master' && github.repository == 'kool-dev/docker-node'
         run: |
-          docker push kooldev/node:${{ matrix.version }}-${arch}
+          docker push kooldev/node:${{ matrix.version }}-$(arch)
 
   amend:
     if: github.ref == 'refs/heads/master' && github.repository == 'kool-dev/docker-node'
