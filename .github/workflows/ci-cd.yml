@@ -76,6 +76,6 @@ jobs:
       - run: |
           docker manifest create kooldev/node:${{ matrix.version }} \
             --amend kooldev/node:${{ matrix.version }}-x86_64 \
-            --amend kooldev/node:${{ matrix.version }}-arm64
+            --amend kooldev/node:${{ matrix.version }}-aarch64
 
           docker manifest push kooldev/node:${{ matrix.version }}
