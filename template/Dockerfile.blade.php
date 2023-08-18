@@ -13,6 +13,7 @@ RUN adduser -D -u 1337 kool && deluser --remove-home node \
         git \
         shadow \
         su-exec \
+        curl \
         # build tools
         g++ \
         libpng-dev \
