@@ -7,6 +7,7 @@ ENV ASUSER= \
 WORKDIR /app
 
 RUN adduser -D -u 1337 kool && deluser --remove-home node \
+    # deps
     && apk add --no-cache \
         bash \
         git \
@@ -18,7 +19,10 @@ RUN adduser -D -u 1337 kool && deluser --remove-home node \
         make \
         zlib-dev \
     && npm install -g pnpm \
-    && rm -rf rm -rf /root/.npm/*
+    && rm -rf rm -rf /root/.npm/* \
+    # dockerize
+    && curl -L https://github.com/jwilder/dockerize/releases/download/v0.6.1/dockerize-alpine-linux-amd64-v0.6.1.tar.gz | tar xz \
+    && mv dockerize /usr/local/bin/dockerize
 
 COPY root-npmrc /root/.npmrc
 COPY --chown=kool:kool kool-npmrc /home/kool/.npmrc

@@ -50,19 +50,6 @@
                     "path": "template/root-npmrc"
                 }
             ]
-        },
-        {
-            "name": "18-ci",
-            "data": {
-                "from": "kooldev/node:18",
-                "version": "18"
-            },
-            "files": [
-                {
-                    "name": "Dockerfile",
-                    "path": "template/Dockerfile-ci"
-                }
-            ]
         }
     ]
 }
