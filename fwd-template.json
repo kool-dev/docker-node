@@ -2,10 +2,10 @@
     "output": ".",
     "builds": [
         {
-            "name": "16",
+            "name": "18",
             "data": {
-                "from": "node:16-alpine",
-                "version": "16"
+                "from": "node:18-alpine",
+                "version": "18"
             },
             "files": [
                 {
@@ -27,10 +27,35 @@
             ]
         },
         {
-            "name": "18",
+            "name": "20",
             "data": {
-                "from": "node:18-alpine",
-                "version": "18"
+                "from": "node:20-alpine",
+                "version": "20"
+            },
+            "files": [
+                {
+                    "name": "Dockerfile",
+                    "path": "template/Dockerfile"
+                },
+                {
+                    "name": "entrypoint",
+                    "path": "template/entrypoint"
+                },
+                {
+                    "name": "kool-npmrc",
+                    "path": "template/kool-npmrc"
+                },
+                {
+                    "name": "root-npmrc",
+                    "path": "template/root-npmrc"
+                }
+            ]
+        },
+        {
+            "name": "21",
+            "data": {
+                "from": "node:21-alpine",
+                "version": "21"
             },
             "files": [
                 {

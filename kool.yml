@@ -3,7 +3,9 @@ scripts:
   build:
     # parse templates
     - kool run template
-    # node 16
-    - docker build --pull -t kooldev/node:16 16
     # node 18
     - docker build --pull -t kooldev/node:18 18
+    # node 20
+    - docker build --pull -t kooldev/node:20 20
+    # node 21
+    - docker build --pull -t kooldev/node:21 21

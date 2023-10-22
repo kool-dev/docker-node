@@ -10,7 +10,7 @@ jobs:
   build:
     strategy:
       matrix:
-        version: [16, 18]
+        version: [18, 20, 21]
         runs-on: [ubuntu-latest, buildjet-4vcpu-ubuntu-2204-arm]
     runs-on: ${{ matrix.runs-on }}
 
@@ -65,7 +65,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        version: [16, 18]
+        version: [18, 20, 21]
 
     steps:
       - uses: docker/login-action@v3
