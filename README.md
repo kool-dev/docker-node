@@ -39,20 +39,20 @@ Variable | Default Value | Description
 With `docker run`:
 
 ```sh
-docker run -it --rm kooldev/node:16 node -v
+docker run -it --rm kooldev/node:20 node -v
 ```
 
 With environment variables:
 
 ```sh
-docker run -it --rm -e ASUSER=500 kooldev/node:16 node -v
+docker run -it --rm -e ASUSER=500 kooldev/node:20 node -v
 ```
 
 With `docker-compose.yml`:
 
 ```yaml
 app:
-  image: kooldev/node:14
+  image: kooldev/node:20
   environment:
     ASUSER: "${$UID}"
 ```
