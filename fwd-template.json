@@ -50,6 +50,31 @@
                     "path": "template/root-npmrc"
                 }
             ]
+        },
+        {
+            "name": "21",
+            "data": {
+                "from": "node:21-alpine",
+                "version": "21"
+            },
+            "files": [
+                {
+                    "name": "Dockerfile",
+                    "path": "template/Dockerfile"
+                },
+                {
+                    "name": "entrypoint",
+                    "path": "template/entrypoint"
+                },
+                {
+                    "name": "kool-npmrc",
+                    "path": "template/kool-npmrc"
+                },
+                {
+                    "name": "root-npmrc",
+                    "path": "template/root-npmrc"
+                }
+            ]
         }
     ]
 }
