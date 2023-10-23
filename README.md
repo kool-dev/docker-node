@@ -1,4 +1,4 @@
-![CI/CD](https://github.com/kool-dev/docker-node/workflows/CI/CD/badge.svg)
+[![CI/CD](https://github.com/kool-dev/docker-node/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/kool-dev/docker-node/actions/workflows/ci-cd.yml)
 
 ## Description
 
