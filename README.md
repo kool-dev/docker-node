@@ -14,9 +14,9 @@ Minimal [Node](https://nodejs.org/en/) Docker image. It's use is intended for [k
 
 - [20](https://github.com/kool-dev/docker-node/blob/master/20/Dockerfile)
 
-### 21
+### 22
 
-- [21](https://github.com/kool-dev/docker-node/blob/master/21/Dockerfile)
+- [22](https://github.com/kool-dev/docker-node/blob/master/22/Dockerfile)
 
 ### Legacy tags
 
@@ -26,6 +26,7 @@ The following images have been discontinued, but still exist on Hub Docker in ca
 - [12](https://github.com/kool-dev/docker-node/tree/legacy-2022-07/12/Dockerfile), [12-qa](https://github.com/kool-dev/docker-node/tree/legacy-2022-07/12-qa/Dockerfile), [12-adonis](https://github.com/kool-dev/docker-node/tree/legacy-2022-07/12-adonis/Dockerfile), [12-adonis-qa](https://github.com/kool-dev/docker-node/tree/legacy-2022-07/12-adonis-qa/Dockerfile), [12-nest](https://github.com/kool-dev/docker-node/tree/legacy-2022-07/12-nest/Dockerfile), [12-nest-qa](https://github.com/kool-dev/docker-node/tree/legacy-2022-07/12-nest-qa/Dockerfile)
 - [14](https://github.com/kool-dev/docker-node/tree/legacy-2022-07/14/Dockerfile), [14-qa](https://github.com/kool-dev/docker-node/tree/legacy-2022-07/14-qa/Dockerfile), [14-adonis](https://github.com/kool-dev/docker-node/tree/legacy-2022-07/14-adonis/Dockerfile), [14-adonis-qa](https://github.com/kool-dev/docker-node/tree/legacy-2022-07/14-adonis-qa/Dockerfile), [14-nest](https://github.com/kool-dev/docker-node/tree/legacy-2022-07/14-nest/Dockerfile), [14-nest-qa](https://github.com/kool-dev/docker-node/tree/legacy-2022-07/14-nest-qa/Dockerfile)
 - [16](https://github.com/kool-dev/docker-node/blob/master/16/Dockerfile)
+- [21](https://github.com/kool-dev/docker-node/blob/master/21/Dockerfile)
 
 ## Environment Variables
 
