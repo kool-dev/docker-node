@@ -52,10 +52,10 @@
             ]
         },
         {
-            "name": "21",
+            "name": "22",
             "data": {
-                "from": "node:21-alpine",
-                "version": "21"
+                "from": "node:22-alpine",
+                "version": "22"
             },
             "files": [
                 {
