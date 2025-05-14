@@ -10,7 +10,7 @@ jobs:
   build:
     strategy:
       matrix:
-        version: [18, 20, 22]
+        version: [18, 20, 22, 22-nginx]
         runs-on: [ubuntu-latest, buildjet-4vcpu-ubuntu-2204-arm]
     runs-on: ${{ matrix.runs-on }}
 
