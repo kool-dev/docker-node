@@ -14,13 +14,13 @@ Minimal [Node](https://nodejs.org/en/) Docker image. It's use is intended for [k
 
 - [22](https://github.com/kool-dev/docker-node/blob/master/22/Dockerfile)
 
-### 22-nginx
-
-- [22-nginx](https://github.com/kool-dev/docker-node/blob/master/22-nginx/Dockerfile)
-
 ### 24
 
 - [24](https://github.com/kool-dev/docker-node/blob/master/24/Dockerfile)
+
+### 22-nginx
+
+- [24-nginx](https://github.com/kool-dev/docker-node/blob/master/24-nginx/Dockerfile)
 
 ### Legacy tags
 
@@ -35,10 +35,10 @@ The following images have been discontinued, but still exist on Hub Docker in ca
 
 ## Environment Variables
 
-Variable | Default Value | Description
---- | --- | ---
-**ASUSER** | `0` | Changes the user id that executes the commands
-**UID** | `0` | Changes the user id that executes the commands **(ignored if ASUSER is provided)**
+| Variable   | Default Value | Description                                                                        |
+| ---------- | ------------- | ---------------------------------------------------------------------------------- |
+| **ASUSER** | `0`           | Changes the user id that executes the commands                                     |
+| **UID**    | `0`           | Changes the user id that executes the commands **(ignored if ASUSER is provided)** |
 
 ## Usage
 
@@ -60,7 +60,7 @@ With `docker-compose.yml`:
 app:
   image: kooldev/node:22
   environment:
-    ASUSER: "${$UID}"
+    ASUSER: '${$UID}'
 ```
 
 ## Contributing
