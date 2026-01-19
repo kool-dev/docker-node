@@ -1,5 +1,5 @@
 # Use the base image
-FROM kooldev/node:22
+FROM kooldev/node:24
 
 RUN apk add --no-cache nginx
 

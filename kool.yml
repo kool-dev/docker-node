@@ -5,5 +5,5 @@ scripts:
     - kool run template
     - docker build --pull -t kooldev/node:20 20
     - docker build --pull -t kooldev/node:22 22
-    - docker build --pull -t kooldev/node:22-nginx 22-nginx
     - docker build --pull -t kooldev/node:24 24
+    - docker build --pull -t kooldev/node:24-nginx 24-nginx
