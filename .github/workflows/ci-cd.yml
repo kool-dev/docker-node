@@ -65,7 +65,7 @@ jobs:
     runs-on: ubuntu-24.04
     strategy:
       matrix:
-        version: [20, 22, 22-nginx, 24]
+        version: [20, 22, 24, 24-nginx]
 
     steps:
       - uses: docker/login-action@v3
