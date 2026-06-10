@@ -20,13 +20,26 @@ RUN adduser -D -u 1337 kool && deluser --remove-home node \
         make \
         zlib-dev \
     && npm install -g pnpm \
+    # pnpm global settings live in ~/.config/pnpm/rc so npm does not warn on unknown keys in ~/.npmrc (npm 11+)
+    && mkdir -p /root/.config/pnpm /home/kool/.config/pnpm \
+    && printf '%s\n' \
+        'store-dir=/root/.pnpm-store' \
+        'package-import-method=copy' \
+        'shamefully-hoist=true' \
+        'scripts-prepend-node-path=true' \
+        > /root/.config/pnpm/rc \
+    && printf '%s\n' \
+        'store-dir=/home/kool/.pnpm-store' \
+        'package-import-method=copy' \
+        'shamefully-hoist=true' \
+        'scripts-prepend-node-path=true' \
+        > /home/kool/.config/pnpm/rc \
+    && chown -R kool:kool /home/kool/.config \
     && rm -rf rm -rf /root/.npm/* \
     # dockerize
     && curl -L https://github.com/jwilder/dockerize/releases/download/v0.6.1/dockerize-alpine-linux-amd64-v0.6.1.tar.gz | tar xz \
     && mv dockerize /usr/local/bin/dockerize
 
-COPY root-npmrc /root/.npmrc
-COPY --chown=kool:kool kool-npmrc /home/kool/.npmrc
 COPY entrypoint /entrypoint
 
 RUN chmod +x /entrypoint
