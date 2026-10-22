@@ -6,10 +6,6 @@ Minimal [Node](https://nodejs.org/en/) Docker image. It's use is intended for [k
 
 ## Available Tags
 
-### 20
-
-- [20](https://github.com/kool-dev/docker-node/blob/master/20/Dockerfile)
-
 ### 22
 
 - [22](https://github.com/kool-dev/docker-node/blob/master/22/Dockerfile)
@@ -31,6 +27,7 @@ The following images have been discontinued, but still exist on Hub Docker in ca
 - [14](https://github.com/kool-dev/docker-node/tree/legacy-2022-07/14/Dockerfile), [14-qa](https://github.com/kool-dev/docker-node/tree/legacy-2022-07/14-qa/Dockerfile), [14-adonis](https://github.com/kool-dev/docker-node/tree/legacy-2022-07/14-adonis/Dockerfile), [14-adonis-qa](https://github.com/kool-dev/docker-node/tree/legacy-2022-07/14-adonis-qa/Dockerfile), [14-nest](https://github.com/kool-dev/docker-node/tree/legacy-2022-07/14-nest/Dockerfile), [14-nest-qa](https://github.com/kool-dev/docker-node/tree/legacy-2022-07/14-nest-qa/Dockerfile)
 - [16](https://github.com/kool-dev/docker-node/blob/master/16/Dockerfile)
 - [18](https://github.com/kool-dev/docker-node/blob/master/18/Dockerfile)
+- [20](https://github.com/kool-dev/docker-node/blob/37fa7fd/20/Dockerfile)
 - [21](https://github.com/kool-dev/docker-node/blob/master/21/Dockerfile)
 - [22-nginx](https://github.com/kool-dev/docker-node/blob/master/22-nginx/Dockerfile)
 
