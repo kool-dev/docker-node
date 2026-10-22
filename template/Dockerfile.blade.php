@@ -20,6 +20,8 @@ RUN adduser -D -u 1337 kool && deluser --remove-home node \
         make \
         zlib-dev \
     && npm install -g pnpm \
+    # node 26+ images no longer ship yarn
+    && (command -v yarn >/dev/null || npm install -g yarn) \
     && rm -rf rm -rf /root/.npm/* \
     # dockerize
     && curl -L https://github.com/jwilder/dockerize/releases/download/v0.6.1/dockerize-alpine-linux-amd64-v0.6.1.tar.gz | tar xz \

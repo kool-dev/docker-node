@@ -18,6 +18,10 @@ Minimal [Node](https://nodejs.org/en/) Docker image. It's use is intended for [k
 
 - [24-nginx](https://github.com/kool-dev/docker-node/blob/master/24-nginx/Dockerfile)
 
+### 26
+
+- [26](https://github.com/kool-dev/docker-node/blob/master/26/Dockerfile)
+
 ### Legacy tags
 
 The following images have been discontinued, but still exist on Hub Docker in case you need them. We strongly advise moving to the newer versions.
