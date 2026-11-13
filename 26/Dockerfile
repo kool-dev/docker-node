@@ -22,13 +22,13 @@ RUN adduser -D -u 1337 kool && deluser --remove-home node \
     && npm install -g pnpm \
     # node 26+ images no longer ship yarn
     && (command -v yarn >/dev/null || npm install -g yarn) \
-    && rm -rf rm -rf /root/.npm/* \
-    # dockerize
-    && curl -L https://github.com/jwilder/dockerize/releases/download/v0.6.1/dockerize-alpine-linux-amd64-v0.6.1.tar.gz | tar xz \
-    && mv dockerize /usr/local/bin/dockerize
+    && rm -rf /root/.npm/*
 
-COPY root-npmrc /root/.npmrc
-COPY --chown=kool:kool kool-npmrc /home/kool/.npmrc
+COPY install-dockerize /tmp/install-dockerize
+RUN sh /tmp/install-dockerize && rm /tmp/install-dockerize
+
+COPY root-pnpm-config /root/.config/pnpm/config.yaml
+COPY --chown=kool:kool kool-pnpm-config /home/kool/.config/pnpm/config.yaml
 COPY entrypoint /entrypoint
 
 RUN chmod +x /entrypoint
