@@ -17,12 +17,16 @@
                     "path": "template/entrypoint"
                 },
                 {
-                    "name": "kool-npmrc",
-                    "path": "template/kool-npmrc"
+                    "name": "kool-pnpm-config",
+                    "path": "template/kool-pnpm-config"
                 },
                 {
-                    "name": "root-npmrc",
-                    "path": "template/root-npmrc"
+                    "name": "root-pnpm-config",
+                    "path": "template/root-pnpm-config"
+                },
+                {
+                    "name": "install-dockerize",
+                    "path": "template/install-dockerize"
                 }
             ]
         },
@@ -42,12 +46,16 @@
                     "path": "template/entrypoint"
                 },
                 {
-                    "name": "kool-npmrc",
-                    "path": "template/kool-npmrc"
+                    "name": "kool-pnpm-config",
+                    "path": "template/kool-pnpm-config"
                 },
                 {
-                    "name": "root-npmrc",
-                    "path": "template/root-npmrc"
+                    "name": "root-pnpm-config",
+                    "path": "template/root-pnpm-config"
+                },
+                {
+                    "name": "install-dockerize",
+                    "path": "template/install-dockerize"
                 }
             ]
         },
@@ -67,12 +75,16 @@
                     "path": "template/entrypoint"
                 },
                 {
-                    "name": "kool-npmrc",
-                    "path": "template/kool-npmrc"
+                    "name": "kool-pnpm-config",
+                    "path": "template/kool-pnpm-config"
                 },
                 {
-                    "name": "root-npmrc",
-                    "path": "template/root-npmrc"
+                    "name": "root-pnpm-config",
+                    "path": "template/root-pnpm-config"
+                },
+                {
+                    "name": "install-dockerize",
+                    "path": "template/install-dockerize"
                 }
             ]
         }
