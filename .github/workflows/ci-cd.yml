@@ -34,7 +34,7 @@ jobs:
         run: echo "week=$(date -u +%Y-%V)" >> "$GITHUB_OUTPUT"
 
       - name: Cache Docker layers
-        uses: actions/cache@v5
+        uses: actions/cache@v6
         with:
           path: /tmp/.buildx-cache
           key: docker-buildx-${{ matrix.runs-on }}-${{ matrix.version }}-${{ steps.cachekey.outputs.week }}-${{ github.sha }}
