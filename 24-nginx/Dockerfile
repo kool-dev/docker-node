@@ -1,5 +1,6 @@
 # Use the base image
-FROM kooldev/node:24
+ARG NODE_IMAGE=kooldev/node:24
+FROM ${NODE_IMAGE}
 
 RUN apk add --no-cache nginx
 
@@ -11,3 +12,4 @@ RUN mkdir -p /etc/nginx/conf.d \
     && rm -f h5bp.tgz \
     && mv server-configs-nginx-*/h5bp/* . \
     && mv server-configs-nginx-*/nginx.conf /etc/nginx/nginx.conf \
+    && sed -i 's/^user www-data;/user nginx;/' /etc/nginx/nginx.conf

@@ -67,6 +67,19 @@ app:
 
 ## Contributing
 
+### Package manager defaults
+
+pnpm's per-user `~/.config/pnpm/config.yaml` sets `storeDir` to
+`~/.pnpm-store` and `packageImportMethod` to `copy`. npm no longer receives
+pnpm-only or removed `scripts-prepend-node-path` options in `.npmrc`.
+With current pnpm, hoisting policy belongs in the project's
+`pnpm-workspace.yaml`; set `shamefullyHoist: true` there if required.
+
+Run `python3 tests/generated.py` and `sh tests/architecture.sh` to check
+generated contexts and download selection. After building an image, run
+`sh tests/image.sh IMAGE` to exercise dockerize, npm, yarn, pnpm, config
+resolution and ownership as root and two remapped user IDs.
+
 ### Updating images and building locally
 
 > You must have [`kool`](https://github.com/kool-dev/kool) installed.
