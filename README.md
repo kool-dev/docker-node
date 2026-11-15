@@ -75,10 +75,28 @@ pnpm-only or removed `scripts-prepend-node-path` options in `.npmrc`.
 With current pnpm, hoisting policy belongs in the project's
 `pnpm-workspace.yaml`; set `shamefullyHoist: true` there if required.
 
-Run `python3 tests/generated.py` and `sh tests/architecture.sh` to check
-generated contexts and download selection. After building an image, run
+Run `docker run --rm -v "$PWD:/app" fireworkweb/fwd:v1.0 fwd template`,
+`git diff --exit-code`, and `bash tests/architecture.sh` to check
+generated contexts and download selection with the real template engine. After building an image, run
 `sh tests/image.sh IMAGE` to exercise dockerize, npm, yarn, pnpm, config
 resolution and ownership as root and two remapped user IDs.
+
+### Shared native publication
+
+CI uses the shared Bash/`jq` builder, parent checks, staging and publisher in
+[kool-dev/kool](https://github.com/kool-dev/kool/tree/main/.github/actions),
+pinned to one immutable commit. Native amd64/arm64 jobs build/test once. Node 24
+NGINX inherits this job's tested Node parent, verified by ID and layer ancestry.
+The old per-run local Buildx cache export is replaced by the common Docker
+driver so derived images resolve fresh local parents consistently.
+
+Only trusted `master` releases stage tested IDs under run/attempt-scoped tags.
+One publisher validates all four stable tags × both architectures before stable
+updates. Historical `-x86_64`/`-aarch64` tags remain compatibility aliases, but
+are updated only after the full native matrix succeeds. PRs/forks/feature branches
+cannot log in or publish. Release runs serialize; only PR runs are canceled.
+On failure, rerun **all jobs**: no previous-attempt metadata is reused and there
+is no resume workflow. Stable updates are not atomic across tags.
 
 ### Updating images and building locally
 
