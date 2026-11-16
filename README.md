@@ -84,7 +84,7 @@ resolution and ownership as root and two remapped user IDs.
 ### Shared native publication
 
 CI uses the shared Bash/`jq` builder, parent checks, staging and publisher in
-[kool-dev/kool](https://github.com/kool-dev/kool/tree/main/.github/actions),
+[kool-dev/action](https://github.com/kool-dev/action/blob/master/image-ci.md),
 pinned to one immutable commit. Native amd64/arm64 jobs build/test once. Node 24
 NGINX inherits this job's tested Node parent, verified by ID and layer ancestry.
 The old per-run local Buildx cache export is replaced by the common Docker
