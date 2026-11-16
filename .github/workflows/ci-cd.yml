@@ -24,7 +24,9 @@ jobs:
           git diff --exit-code
           bash tests/architecture.sh
       - id: tags
-        run: echo "tags=$(jq -c '[.builds[].name] + [\"24-nginx\"]' fwd-template.json)" >> "$GITHUB_OUTPUT"
+        run: |
+          tags=$(jq -c '[.builds[].name] + ["24-nginx"]' fwd-template.json)
+          echo "tags=$tags" >> "$GITHUB_OUTPUT"
   build:
     needs: checks
     runs-on: ${{ matrix.platform.runner }}
